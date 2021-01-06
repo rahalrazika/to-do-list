@@ -50,13 +50,33 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
+/***/ "./src/classes/projects.js":
+/*!*********************************!*\
+  !*** ./src/classes/projects.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst Project = (title, description, priority) => {\n  return { title, description, priority };\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Project);\n\n//# sourceURL=webpack://to-do-list/./src/classes/projects.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tailwindcss_tailwind_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tailwindcss/tailwind.css */ \"./node_modules/tailwindcss/tailwind.css\");\n\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tailwindcss_tailwind_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tailwindcss/tailwind.css */ \"./node_modules/tailwindcss/tailwind.css\");\n/* harmony import */ var _interface_new_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./interface/new-project */ \"./src/interface/new-project.js\");\n/* harmony import */ var _classes_projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./classes/projects */ \"./src/classes/projects.js\");\n\n\n\n\ndocument.querySelector('#content').innerHTML = (0,_interface_new_project__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/interface/new-project.js":
+/*!**************************************!*\
+  !*** ./src/interface/new-project.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _classes_projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../classes/projects */ \"./src/classes/projects.js\");\n/* eslint-disable no-unused-vars */\n\n\nconst newProject = () => {\n\n  const getFormValues = () => {\n    const valuesForm = document.querySelectorAll('inputs');\n    const values = [];\n    for (let i = 0; i < valuesForm.length; i = +1) {\n      values.push(valuesForm[i].value);\n    }\n    const p = (0,_classes_projects__WEBPACK_IMPORTED_MODULE_0__.default)(values);\n    console.log(p);\n    return p;\n  };\n\n  \n\n\n  const html = `\n    <form class=\"block text-sm font-medium text-gray-700 w-8/12\">\n      <label> Project Title </label>\n      <div class=\"mt-1 relative rounded-md shadow-sm border-gray-800\">\n        <input type=\"text\" name=\"project-title\" placeholder=\"Type your project name\" class=\"focus:ring-indigo-500 \n        focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12\">\n      </div>\n      <label> Project Description </label>\n      <div class=\"mt-1 relative rounded-md shadow-sm border-gray-800\">\n        <input type=\"text\" name=\"project-title\" placeholder=\"Type your project name\" class=\"focus:ring-indigo-500 \n        focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12\">\n      </div>\n      <label> Project Priority </label>\n      <div class=\"mt-1 relative rounded-md shadow-sm border-gray-800\">\n        <input type=\"text\" name=\"project-title\" placeholder=\"Type your project name\" class=\"focus:ring-indigo-500 \n        focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12\">\n      </div>\n      <div id=\"createProject\" >Create project</div>\n    </form>\n  `;\n\n  \n  return html;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (newProject);\n\n//# sourceURL=webpack://to-do-list/./src/interface/new-project.js?");
 
 /***/ })
 
