@@ -1,5 +1,3 @@
-const Project = (title, description, priority) => {
-  return { title, description, priority };
-};
+const Project = (title, description, priority) => ({ title, description, priority });
 
 export default Project;

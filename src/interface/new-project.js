@@ -2,20 +2,17 @@
 import Project from '../classes/projects';
 
 const newProject = () => {
-
   const getFormValues = () => {
     const valuesForm = document.querySelectorAll('inputs');
     const values = [];
     for (let i = 0; i < valuesForm.length; i = +1) {
       values.push(valuesForm[i].value);
+
     }
     const p = Project(values);
     console.log(p);
     return p;
   };
-
-  
-
 
   const html = `
     <form class="block text-sm font-medium text-gray-700 w-8/12">
@@ -34,11 +31,13 @@ const newProject = () => {
         <input type="text" name="project-title" placeholder="Type your project name" class="focus:ring-indigo-500 
         focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12">
       </div>
-      <div id="createProject" >Create project</div>
+      <button onclick ="getFormValues"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          Create project
+      </button>
     </form>
   `;
 
-  
+
   return html;
 };
 
