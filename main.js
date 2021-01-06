@@ -56,7 +56,17 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Project\": () => /* binding */ Project,\n/* harmony export */   \"getFormValues\": () => /* binding */ getFormValues\n/* harmony export */ });\nconst Project = (title, description, priority) => {\n  return { title, description, priority };\n};\n\nconst getFormValues = () => {\n  const valuesForm = document.querySelectorAll('input');\n  const values = [];\n  for (let i = 0; i < valuesForm.length; i++) {\n    values.push(valuesForm[i].value);\n  }\n\n  let b = JSON.parse(window.localStorage.getItem('projects'));\n  let p = Project(values[0], values[1], values[2]);\n  b.push(p)\n  window.localStorage.setItem('projects', [JSON.stringify(b)]);\n\n  \n};\n\n\n\n\n\n//# sourceURL=webpack://to-do-list/./src/classes/projects.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Project\": () => /* binding */ Project,\n/* harmony export */   \"getFormValues\": () => /* binding */ getFormValues\n/* harmony export */ });\nconst Project = (title, description, priority, todos = []) => {\n  return { id, title, description, priority, todos };\n};\n\nconst getFormValues = () => {\n  const valuesForm = document.querySelectorAll('input');\n  const values = [];\n  for (let i = 0; i < valuesForm.length; i++) {\n    valuesForm[i].id = i;\n    values.push(valuesForm[i].value);\n  }\n\n  let b = JSON.parse(window.localStorage.getItem('projects'));\n  let p = Project(values[0], values[1], values[2]);\n  b.push(p);\n  window.localStorage.setItem('projects', [JSON.stringify(b)]);\n};\n\n\n\n\n\n//# sourceURL=webpack://to-do-list/./src/classes/projects.js?");
+
+/***/ }),
+
+/***/ "./src/classes/to-dos.js":
+/*!*******************************!*\
+  !*** ./src/classes/to-dos.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addItem\": () => /* binding */ addItem\n/* harmony export */ });\nconst ToDoItem = (itemDescription, completed = false) => {\n  return {itemDescription, completed}\n};\n\nconst addItem = (project, item) => {\n  let todo = ToDoItem(item, false);\n  let b = JSON.parse(window.localStorage.getItem('projects'));\n  let p = b[0];\n  console.log(p)\n  p.todos.push(todo);\n  window.localStorage.setItem('projects', [JSON.stringify(b)]);\n};\n\n\n\n//# sourceURL=webpack://to-do-list/./src/classes/to-dos.js?");
 
 /***/ }),
 
@@ -66,7 +76,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tailwindcss_tailwind_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tailwindcss/tailwind.css */ \"./node_modules/tailwindcss/tailwind.css\");\n/* harmony import */ var _interface_new_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./interface/new-project */ \"./src/interface/new-project.js\");\n\n\n\ndocument.querySelector('#content').innerHTML = (0,_interface_new_project__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tailwindcss_tailwind_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tailwindcss/tailwind.css */ \"./node_modules/tailwindcss/tailwind.css\");\n/* harmony import */ var _interface_new_project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./interface/new-project */ \"./src/interface/new-project.js\");\n/* harmony import */ var _interface_new_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./interface/new-item */ \"./src/interface/new-item.js\");\n/* harmony import */ var _interface_list_projects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./interface/list-projects */ \"./src/interface/list-projects.js\");\n\n\n\n\n\n// document.querySelector('#content').innerHTML = newProject();\n\n// document.querySelector('#content').innerHTML = ListProjects();\n\nlet project = JSON.parse(window.localStorage.getItem('projects'));\n\ndocument.querySelector('#content').innerHTML = (0,_interface_new_item__WEBPACK_IMPORTED_MODULE_2__.default)(project[0]);\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/interface/list-projects.js":
+/*!****************************************!*\
+  !*** ./src/interface/list-projects.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst ListProjects = () => {\n  let projects = JSON.parse(window.localStorage.getItem('projects'));\n\n  let projectsList = [];\n  for(let i = 0; i < projects.length; i++) {\n    projectsList.push(`<li>${projects[i].title}</li>`);\n  }\n\n  let html = `\n    <ul>\n      ${projectsList.join(' ')}\n    </ul>\n  `;\n  \n  return html\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListProjects);\n\n//# sourceURL=webpack://to-do-list/./src/interface/list-projects.js?");
+
+/***/ }),
+
+/***/ "./src/interface/new-item.js":
+/*!***********************************!*\
+  !*** ./src/interface/new-item.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _classes_to_dos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../classes/to-dos */ \"./src/classes/to-dos.js\");\n\nconst NewItem = (project) => {\n\n  document.addEventListener('DOMContentLoaded', (event) => {\n    const el = document.getElementById('#button');\n    el.addEventListener('click', () => (0,_classes_to_dos__WEBPACK_IMPORTED_MODULE_0__.addItem)(project, 'Test ToDo'));\n  });\n\n\n  let html = `\n  <h2>${project.title}<h2>\n  <input placeholder=\"Description\" class=\"border\"/> \n  <div id=\"#button\" class=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full\">\n  Add new item\n  </div>\n`;\n\n  return html\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NewItem);\n\n//# sourceURL=webpack://to-do-list/./src/interface/new-item.js?");
 
 /***/ }),
 
