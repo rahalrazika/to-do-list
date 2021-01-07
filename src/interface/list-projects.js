@@ -2,7 +2,7 @@ const ListProjects = () => {
   const projects = JSON.parse(window.localStorage.getItem('projects'));
 
   const projectsList = [];
-  for (let i = 0; i < projects.length; i++) {
+  for (let i = 0; i < projects.length; i += 1) {
     const projectCardHtml = `
     <div class="h-48 shadow-lg rounded flex flex-col justify-around p-5 col-span-1">
       <div class="h-1/2">

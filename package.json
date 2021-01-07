@@ -39,6 +39,7 @@
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "postcss-import": "^13.0.0",
-    "tailwindcss": "^2.0.1"
+    "tailwindcss": "^2.0.1",
+    "util": "^0.12.3"
   }
 }

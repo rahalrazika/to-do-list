@@ -2,25 +2,24 @@
 import { Project, getFormValues } from '../classes/projects';
 
 const newProject = () => {
-
   document.addEventListener('DOMContentLoaded', (event) => {
     const el = document.getElementById('#button');
     el.addEventListener('click', () => getFormValues());
   });
 
   const html = `
-    <form class="block text-sm font-medium text-gray-700 w-8/12">
-      <label> Project Title </label>
+    <form class="block text-sm font-medium text-gray-700 w-8/12 mt-10 p-28 bg-gray-50  ">
+      <label class="font-black"> Project Title </label>
       <div class="mt-1 relative rounded-md shadow-sm border-gray-800">
         <input type="text" name="project-title" placeholder="Type your project name" class="focus:ring-indigo-500 
         focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12">
       </div>
-      <label> Project Description </label>
+      <label class="font-black"> Project Description </label>
       <div class="mt-1 relative rounded-md shadow-sm border-gray-800">
         <input type="text" name="project-description" placeholder="Type your project name" class="focus:ring-indigo-500 
         focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12">
       </div>
-      <label> Project Priority </label>
+      <label class="font-black"> Project Priority </label>
       <div class="mt-1 relative rounded-md shadow-sm border-gray-800">
         <input type="text" name="project-priority" placeholder="Type your project name" class="focus:ring-indigo-500 
         focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12">
