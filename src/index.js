@@ -5,8 +5,8 @@ import ListProjects from './interface/list-projects'
 
 // document.querySelector('#content').innerHTML = newProject();
 
-// document.querySelector('#content').innerHTML = ListProjects();
+document.querySelector('#content').innerHTML = ListProjects();
 
-let project = JSON.parse(window.localStorage.getItem('projects'));
+// let project = JSON.parse(window.localStorage.getItem('projects'));
 
-document.querySelector('#content').innerHTML = NewItem(project[0]);
+// document.querySelector('#content').innerHTML = NewItem(project[0]);
