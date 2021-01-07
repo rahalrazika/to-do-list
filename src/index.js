@@ -2,28 +2,40 @@ import 'tailwindcss/tailwind.css';
 import newProject from './interface/new-project';
 import NewItem from './interface/new-item';
 import ListProjects from './interface/list-projects';
+import localStorage from './classes/localstorage';
 
 
-function newBtn() {
-  return document.querySelector('.nav').innerHtml;
-}
-
-const showForm = () => {
-  const form = document.querySelector('#content');
+const routes = () => {
   const url = new URL(window.location.hash);
 
-  newBtn();
-  if (url.hash === '#newProject') {
-    form.innerHtml = newProject();
+  switch (url.hash) {
+    case '#new-project':
+      document.querySelector('#content').innerHTML = newProject();
+      break;
+    default:
+      window.location.hash = '#index';
+      document.querySelector('#content').innerHTML = ListProjects(localStorage());
+      break;
   }
 };
+
 const urlListner = () => {
-  window.onhashchange = () => showForm();
+  window.onhashchange = () => routes();
 };
 
-urlListner();
+const addEventListener = (id, url) => {
+  const createProjectButton = document.getElementById(id);
+  createProjectButton.addEventListener('click', () => { window.location.hash = url; });
+};
 
-// document.querySelector('#content').innerHTML = newProject();
+document.addEventListener('DOMContentLoaded', () => {
+  addEventListener('#createNewProjectButton', '#new-project');
+  addEventListener('#logo', '#index');
+  routes();
+  urlListner();
+});
+
+//
 
 // document.querySelector('#content').innerHTML = ListProjects();
 

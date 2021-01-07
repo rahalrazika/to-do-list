@@ -2,10 +2,15 @@
 import { Project, getFormValues } from '../classes/projects';
 
 const newProject = () => {
-  document.addEventListener('DOMContentLoaded', (event) => {
-    const el = document.getElementById('#button');
-    el.addEventListener('click', () => getFormValues());
-  });
+
+  const checkExist = setInterval(() => {
+    if (document.querySelectorAll('#button')) {
+      const el = document.getElementById('button');
+      el.addEventListener('click', () => getFormValues());
+      clearInterval(checkExist);
+    }
+  }, 100);
+
 
   const html = `
     <form class="block text-sm font-medium text-gray-700 w-8/12 mt-10 p-28 bg-gray-50  ">
@@ -24,7 +29,7 @@ const newProject = () => {
         <input type="text" name="project-priority" placeholder="Type your project name" class="focus:ring-indigo-500 
         focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm  rounded-md h-12">
       </div>
-      <div id="#button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <div id="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full cursor-pointer">
           Create project
       </div>
     </form>
