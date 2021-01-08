@@ -2,14 +2,10 @@
 import { Project, getFormValues } from '../classes/projects';
 
 const newProject = () => {
-
-  const checkExist = setInterval(() => {
-    if (document.querySelectorAll('#button')) {
-      const el = document.getElementById('button');
-      el.addEventListener('click', () => getFormValues());
-      clearInterval(checkExist);
-    }
-  }, 100);
+  window.onload = () => {
+    const el = document.getElementById('button');
+    el.addEventListener('click', () => getFormValues());
+  };
 
 
   const html = `

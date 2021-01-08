@@ -7,10 +7,13 @@ import localStorage from './classes/localstorage';
 
 const routes = () => {
   const url = new URL(window.location.hash);
-
+  let project = JSON.parse(window.localStorage.getItem('projects'));
   switch (url.hash) {
     case '#new-project':
       document.querySelector('#content').innerHTML = newProject();
+      break;
+    case /add-item/.test(url.hash):
+      document.querySelector('#content').innerHTML = NewItem(project[0]);
       break;
     default:
       window.location.hash = '#index';
@@ -18,6 +21,7 @@ const routes = () => {
       break;
   }
 };
+
 
 const urlListner = () => {
   window.onhashchange = () => routes();
@@ -27,6 +31,7 @@ const addEventListener = (id, url) => {
   const createProjectButton = document.getElementById(id);
   createProjectButton.addEventListener('click', () => { window.location.hash = url; });
 };
+
 
 document.addEventListener('DOMContentLoaded', () => {
   addEventListener('#createNewProjectButton', '#new-project');
