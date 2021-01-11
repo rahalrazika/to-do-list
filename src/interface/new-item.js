@@ -1,10 +1,10 @@
 import addItem from '../classes/to-dos';
 
 const NewItem = (project) => {
-  document.addEventListener('DOMContentLoaded', () => {
-    const el = document.getElementById('#button');
+  window.onload = () => {
+    const el = document.getElementById('button');
     el.addEventListener('click', () => addItem(project, 'Test ToDo'));
-  });
+  };
 
 
   const html = `
