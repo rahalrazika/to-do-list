@@ -3,4 +3,9 @@ const localStorage = () => {
   return projects;
 };
 
-export default localStorage;
+const getSingleProject = (projectId) => {
+  const project = localStorage();
+  return project[projectId];
+};
+
+export { localStorage, getSingleProject };
