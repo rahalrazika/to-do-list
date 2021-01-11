@@ -1,14 +1,5 @@
 const ListProjects = (projects) => {
 
-  window.onload = () => {
-    const projects = document.querySelectorAll('.project-card');
-    for (let i = 0; i < projects.length; i++) {
-      const el = projects[i];
-      el.addEventListener('click', () => { window.location.hash = `#add-item/${i}` });
-    }
-  };
-
-
 
   const projectsList = [];
   for (let i = 0; i < projects.length; i += 1) {
