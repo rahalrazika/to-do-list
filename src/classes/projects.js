@@ -1,7 +1,7 @@
 import localStorage from "./localstorage";
 
-const Project = ([id, title, description, priority, todos = []]) => ({
-  id, title, description, priority, todos,
+const Project = ([title, description, priority, todos = []]) => ({
+  title, description, priority, todos,
 });
 
 const getFormValues = () => {

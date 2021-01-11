@@ -8,9 +8,15 @@ import { addProjectsLinks } from './classes/projects';
 
 const routes = () => {
   const url = new URL(window.location.hash);
+<<<<<<< HEAD
   let project = JSON.parse(window.localStorage.getItem('projects'));
   switch (true) {
     case /#new-project/.test(url.hash):
+=======
+  const project = JSON.parse(window.localStorage.getItem('projects'));
+  switch (url.hash) {
+    case '#new-project':
+>>>>>>> ce3f505abea630fbed5f7a72cadf69bf2bf36936
       document.querySelector('#content').innerHTML = newProject();
       break;
     case /.*?add-item(.*?)/g.test(url.hash):
@@ -50,3 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // document.querySelector('#content').innerHTML = NewItem(project[0]);
+
