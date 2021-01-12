@@ -3,23 +3,25 @@ import newProject from './interface/new-project';
 import NewItem from './interface/new-item';
 import ListProjects from './interface/list-projects';
 import { localStorage } from './classes/localstorage';
-import { addProjectsLinks } from './classes/projects';
+import { addSelectProjectLink } from './classes/projects';
+import { addCheckboxListner, addCreateAddItemLink } from './classes/to-dos';
 
 
 const routes = () => {
   const url = new URL(window.location.hash);
-  const project = JSON.parse(window.localStorage.getItem('projects'));
   switch (true) {
     case /#new-project/.test(url.hash):
       document.querySelector('#content').innerHTML = newProject();
       break;
     case /.*?add-item(.*?)/g.test(url.hash):
-      document.querySelector('#content').innerHTML = NewItem(project[0]);
+      document.querySelector('#content').innerHTML = NewItem();
+      addCreateAddItemLink();
+      addCheckboxListner();
       break;
     default:
       window.location.hash = '#index';
       document.querySelector('#content').innerHTML = ListProjects(localStorage());
-      addProjectsLinks();
+      addSelectProjectLink();
       break;
   }
 };

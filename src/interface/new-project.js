@@ -2,11 +2,6 @@
 import { Project, getFormValues } from '../classes/projects';
 
 const newProject = () => {
-  window.onload = () => {
-    const el = document.getElementById('button');
-    el.addEventListener('click', () => getFormValues());
-  };
-
 
   const html = `
     <form class="block text-sm font-medium text-gray-700 w-8/12 mt-10 p-28 bg-gray-50  ">

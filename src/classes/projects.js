@@ -18,11 +18,18 @@ const getFormValues = () => {
   window.localStorage.setItem('projects', [JSON.stringify(b)]);
 };
 
-const addProjectsLinks = () => {
+const addSelectProjectLink = () => {
   const projects = document.querySelectorAll('.project-card');
   for (let i = 0; i < projects.length; i += 1) {
     const el = projects[i];
     el.addEventListener('click', (event) => { event.preventDefault(); window.location.hash = `#add-item/${i}`; });
   }
 };
-export { Project, getFormValues, addProjectsLinks };
+
+const addCreateProjectLink = () => {
+  const el = document.getElementById('button');
+  el.addEventListener('click', () => getFormValues());
+};
+
+
+export { Project, getFormValues, addCreateProjectLink, addSelectProjectLink };
