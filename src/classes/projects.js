@@ -1,4 +1,4 @@
-import localStorage from "./localstorage";
+import localStorage from './localstorage';
 
 const Project = ([title, description, priority, todos = []]) => ({
   title, description, priority, todos,
@@ -20,12 +20,9 @@ const getFormValues = () => {
 
 const addProjectsLinks = () => {
   const projects = document.querySelectorAll('.project-card');
-  for (let i = 0; i < projects.length; i++) {
+  for (let i = 0; i < projects.length; i += 1) {
     const el = projects[i];
     el.addEventListener('click', (event) => { event.preventDefault(); window.location.hash = `#add-item/${i}`; });
   }
 };
-
-
-
 export { Project, getFormValues, addProjectsLinks };

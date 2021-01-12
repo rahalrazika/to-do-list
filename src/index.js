@@ -8,7 +8,7 @@ import { addProjectsLinks } from './classes/projects';
 
 const routes = () => {
   const url = new URL(window.location.hash);
-  let project = JSON.parse(window.localStorage.getItem('projects'));
+  const project = JSON.parse(window.localStorage.getItem('projects'));
   switch (true) {
     case /#new-project/.test(url.hash):
       document.querySelector('#content').innerHTML = newProject();
@@ -50,4 +50,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // document.querySelector('#content').innerHTML = NewItem(project[0]);
-
