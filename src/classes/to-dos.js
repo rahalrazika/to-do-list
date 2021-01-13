@@ -51,4 +51,6 @@ const addCheckboxListner = () => {
   }
 };
 
-export { addItem, addCreateAddItemLink, getProjectIdFromUrl, addCheckboxListner };
+export {
+  addItem, addCreateAddItemLink, getProjectIdFromUrl, addCheckboxListner,
+};

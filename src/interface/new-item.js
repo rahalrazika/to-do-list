@@ -1,4 +1,4 @@
-import { getSingleProject } from '../classes/localstorage';
+//import { getSingleProject } from '../classes/localstorage';
 import { getProjectIdFromUrl } from '../classes/to-dos';
 import ListToDo from './list-item';
 

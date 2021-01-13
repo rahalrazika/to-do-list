@@ -1,4 +1,4 @@
-import { getProjectIdFromUrl } from "../classes/to-dos";
+import { getProjectIdFromUrl } from '../classes/to-dos';
 
 const ListToDo = () => {
   const project = getProjectIdFromUrl();
@@ -11,7 +11,7 @@ const ListToDo = () => {
             ${items[i].itemDescription}
             </div>
             <div>
-            ${items[i].completed ? `<input class="checkbox" type="checkbox" checked>` : `<input id=${i} class="checkbox" type="checkbox">`} 
+            ${items[i].completed ? '<input class="checkbox" type="checkbox" checked>' : `<input id=${i} class="checkbox" type="checkbox">`} 
             </div>
             <div class="delete">
               Delete

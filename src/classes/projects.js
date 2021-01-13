@@ -32,4 +32,6 @@ const addCreateProjectLink = () => {
 };
 
 
-export { Project, getFormValues, addCreateProjectLink, addSelectProjectLink };
+export {
+  Project, getFormValues, addCreateProjectLink, addSelectProjectLink,
+};
