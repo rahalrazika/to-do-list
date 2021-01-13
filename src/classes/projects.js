@@ -1,4 +1,4 @@
-import localStorage from './localstorage';
+import DB from './localstorage';
 
 const Project = ([title, description, priority, todos = []]) => ({
   title, description, priority, todos,
@@ -10,12 +10,8 @@ const getFormValues = () => {
   for (let i = 0; i < valuesForm.length; i += 1) {
     values.push(valuesForm[i].value);
   }
-
-  const b = JSON.parse(window.localStorage.getItem('projects'));
-  values.id = b.length + 1;
   const p = Project(values);
-  b.push(p);
-  window.localStorage.setItem('projects', [JSON.stringify(b)]);
+  DB.saveProject(p);
 };
 
 const addSelectProjectLink = () => {

@@ -2,7 +2,7 @@ import 'tailwindcss/tailwind.css';
 import newProject from './interface/new-project';
 import NewItem from './interface/new-item';
 import ListProjects from './interface/list-projects';
-import { localStorage } from './classes/localstorage';
+import DB from './classes/localstorage';
 import { addCreateProjectLink, addSelectProjectLink } from './classes/projects';
 import { addCheckboxListner, addCreateAddItemLink } from './classes/to-dos';
 
@@ -21,7 +21,7 @@ const routes = () => {
       break;
     default:
       window.location.hash = '#index';
-      document.querySelector('#content').innerHTML = ListProjects(localStorage());
+      document.querySelector('#content').innerHTML = ListProjects(DB.getProjects());
       addSelectProjectLink();
       break;
   }

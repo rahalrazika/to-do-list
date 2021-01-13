@@ -1,14 +1,8 @@
-import { getSingleProject, updateProject } from './localstorage';
+import DB from './localstorage';
 
 const ToDoItem = (itemDescription, completed = false) => ({ itemDescription, completed });
 
-const getProjectIdFromUrl = () => {
-  const projects = window.location.hash.split('/');
-  const projectId = projects[1];
-  const project = getSingleProject(projectId);
-  project.id = projectId;
-  return project;
-};
+
 
 const addItem = () => {
   const project = getProjectIdFromUrl();
@@ -25,13 +19,13 @@ const addItem = () => {
 const toggleCheckboxes = (id) => {
   const project = getProjectIdFromUrl();
   project.todos[id].completed = !project.todos[id].completed;
-  updateProject(project);
+  DB.updateProject(project);
 };
 
 const handleDeleteItem = (id) => {
   const project = getProjectIdFromUrl();
   project.todos.splice(id, 1);
-  updateProject(project);
+  DB.updateProject(project);
 };
 
 
