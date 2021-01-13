@@ -1,6 +1,8 @@
+import { format } from 'date-fns';
 import { getSingleProject, updateProject } from './localstorage';
 
-const ToDoItem = (itemDescription, completed = false) => ({ itemDescription, completed });
+
+const ToDoItem = (itemDescription, completed = false, date = format(new Date(), 'MM/dd/yyyy')) => ({ itemDescription, completed, date });
 
 const getProjectIdFromUrl = () => {
   const projects = window.location.hash.split('/');

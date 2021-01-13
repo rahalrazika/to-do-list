@@ -1,8 +1,14 @@
-import localStorage from './localstorage';
+import { format } from 'date-fns';
 
-const Project = ([title, description, priority, todos = []]) => ({
-  title, description, priority, todos,
+
+const Project = ([title, description, priority, todos = [], date = format(new Date(), 'MM/dd/yyyy')]) => ({
+  title,
+  description,
+  priority,
+  todos,
+  date,
 });
+
 
 const getFormValues = () => {
   const valuesForm = document.querySelectorAll('input');

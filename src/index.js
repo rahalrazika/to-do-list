@@ -3,7 +3,7 @@ import newProject from './interface/new-project';
 import NewItem from './interface/new-item';
 import ListProjects from './interface/list-projects';
 import { localStorage } from './classes/localstorage';
-import { addSelectProjectLink } from './classes/projects';
+import { addCreateProjectLink, addSelectProjectLink } from './classes/projects';
 import { addCheckboxListner, addCreateAddItemLink } from './classes/to-dos';
 
 
@@ -12,6 +12,7 @@ const routes = () => {
   switch (true) {
     case /#new-project/.test(url.hash):
       document.querySelector('#content').innerHTML = newProject();
+      addCreateProjectLink();
       break;
     case /.*?add-item(.*?)/g.test(url.hash):
       document.querySelector('#content').innerHTML = NewItem();
