@@ -1,7 +1,7 @@
-import { getProjectIdFromUrl } from "../classes/to-dos";
+import utils from '../classes/utils';
 
 const ListToDo = () => {
-  const project = getProjectIdFromUrl();
+  const project = utils.getProjectIdFromUrl();
   const items = project.todos;
   const toDoList = [];
   for (let i = 0; i < items.length; i += 1) {
@@ -11,9 +11,9 @@ const ListToDo = () => {
             ${items[i].itemDescription}
             </div>
             <div>
-            ${items[i].completed ? `<input class="checkbox" type="checkbox" checked>` : `<input id=${i} class="checkbox" type="checkbox">`} 
+            ${items[i].completed ? '<input class="checkbox" type="checkbox" checked>' : `<input id=${i} class="checkbox" type="checkbox">`} 
             </div>
-            <div class="delete">
+            <div class="delete cursor-pointer">
               Delete
             </div>
           </div>  

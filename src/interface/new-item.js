@@ -1,9 +1,8 @@
-import { getSingleProject } from '../classes/localstorage';
-import { getProjectIdFromUrl } from '../classes/to-dos';
+import utils from '../classes/utils';
 import ListToDo from './list-item';
 
 const NewItem = () => {
-  const project = getProjectIdFromUrl();
+  const project = utils.getProjectIdFromUrl();
 
   const html = `
   <h2 class="text-center text-gray-400 text-5xl mt-14 ">${project.title}<h2>

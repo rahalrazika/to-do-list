@@ -1,11 +1,13 @@
 import DB from './localstorage';
+import { Project } from './projects';
+import utils from './utils';
 
-const ToDoItem = (itemDescription, completed = false) => ({ itemDescription, completed });
 
+const ToDoItem = (itemDescription, completed = false, date = format(new Date(), 'MM/dd/yyyy')) => ({ itemDescription, completed, date });
 
 
 const addItem = () => {
-  const project = getProjectIdFromUrl();
+  const project = utils.getProjectIdFromUrl();
   const text = document.querySelector('input').value;
   const todo = ToDoItem(text, false);
   const b = JSON.parse(window.localStorage.getItem('projects'));
@@ -17,13 +19,13 @@ const addItem = () => {
 };
 
 const toggleCheckboxes = (id) => {
-  const project = getProjectIdFromUrl();
+  const project = utils.getProjectIdFromUrl();
   project.todos[id].completed = !project.todos[id].completed;
   DB.updateProject(project);
 };
 
 const handleDeleteItem = (id) => {
-  const project = getProjectIdFromUrl();
+  const project = utils.getProjectIdFromUrl();
   project.todos.splice(id, 1);
   DB.updateProject(project);
 };
@@ -45,4 +47,6 @@ const addCheckboxListner = () => {
   }
 };
 
-export { addItem, addCreateAddItemLink, getProjectIdFromUrl, addCheckboxListner };
+export {
+  addItem, addCreateAddItemLink, addCheckboxListner,
+};

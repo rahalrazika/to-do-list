@@ -1,17 +1,24 @@
+import { format } from 'date-fns';
 import DB from './localstorage';
+import utils from './utils';
 
-const Project = ([title, description, priority, todos = []]) => ({
-  title, description, priority, todos,
+
+const Project = ([title, description, dueDate, priority, todos = [], createdDate = format(new Date(), 'MM/dd/yyyy')]) => ({
+  title,
+  description,
+  priority,
+  dueDate,
+  createdDate,
+  todos,
 });
 
-const getFormValues = () => {
-  const valuesForm = document.querySelectorAll('input');
-  const values = [];
-  for (let i = 0; i < valuesForm.length; i += 1) {
-    values.push(valuesForm[i].value);
+
+const createProject = () => {
+  let values = utils.getFormValues();
+  if (utils.validateForms(values)) {
+    const p = Project(values);
+    DB.saveProject(p);
   }
-  const p = Project(values);
-  DB.saveProject(p);
 };
 
 const addSelectProjectLink = () => {
@@ -24,8 +31,10 @@ const addSelectProjectLink = () => {
 
 const addCreateProjectLink = () => {
   const el = document.getElementById('button');
-  el.addEventListener('click', () => getFormValues());
+  el.addEventListener('click', () => createProject());
 };
 
 
-export { Project, getFormValues, addCreateProjectLink, addSelectProjectLink };
+export {
+  Project, createProject, addCreateProjectLink, addSelectProjectLink,
+};
