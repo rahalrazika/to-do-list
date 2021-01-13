@@ -14,7 +14,7 @@ A todo list app built with javascript vanilla
 
 
 ## Live Demo 🚀
-[TODO]()
+[TODO](https://rahalrazika.github.io/to-do-list/)
 
 ## Getting Started 💻
 
