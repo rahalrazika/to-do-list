@@ -14,7 +14,7 @@ const Project = ([title, description, dueDate, priority, todos = [], createdDate
 
 
 const createProject = () => {
-  let values = utils.getFormValues();
+  const values = utils.getFormValues();
   if (utils.validateForms(values)) {
     const p = Project(values);
     DB.saveProject(p);

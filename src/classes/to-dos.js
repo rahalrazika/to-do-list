@@ -1,6 +1,5 @@
 import { format } from 'date-fns';
 import DB from './localstorage';
-import { Project } from './projects';
 import utils from './utils';
 
 

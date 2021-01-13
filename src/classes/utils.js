@@ -19,14 +19,14 @@ const utils = {
     return values;
   },
   validateForms([...args]) {
-    for (let i = 0; i < args.length; i++) {
+    for (let i = 0; i < args.length; i += 1) {
       if (args[i] === '') {
         document.querySelector('body').innerHTML += customAlert('Please fill all fields.');
         return false;
       }
     }
     return true;
-  }
+  },
 };
 
 export default utils;
