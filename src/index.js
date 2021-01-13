@@ -44,12 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
   routes();
   urlListner();
 });
-
-//
-
-// document.querySelector('#content').innerHTML = ListProjects();
-
-// let project = JSON.parse(window.localStorage.getItem('projects'));
-
-
-// document.querySelector('#content').innerHTML = NewItem(project[0]);
