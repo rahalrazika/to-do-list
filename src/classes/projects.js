@@ -7,6 +7,12 @@ const Project = ([title, description, priority, todos = [], date = format(new Da
   priority,
   todos,
   date,
+
+  validate() {
+    if (this.title === ' ' || this.description === ' ' || this.priority === ' ') {
+      console.log("You can\'t add an empty project");
+    }
+  },
 });
 
 
