@@ -26,7 +26,17 @@ const utils = {
       }
     }
     return true;
-  }
+  },
+  checkForHashInUrl() {
+    let url;
+    if (window.location.hash) {
+      url = new URL(window.location.hash);
+    } else {
+      url = '#index';
+    }
+
+    return url;
+  },
 };
 
 export default utils;

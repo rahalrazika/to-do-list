@@ -11,7 +11,7 @@ const addItem = () => {
   const project = utils.getProjectIdFromUrl();
   const text = document.querySelector('input').value;
   const todo = ToDoItem(text, false);
-  const b = JSON.parse(window.localStorage.getItem('projects'));
+  const b = DB.getProjects();
   const p = b[project.id];
   p.todos.push(todo);
   window.localStorage.setItem('projects', [JSON.stringify(b)]);

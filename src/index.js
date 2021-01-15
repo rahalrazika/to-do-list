@@ -5,10 +5,12 @@ import ListProjects from './interface/list-projects';
 import DB from './classes/localstorage';
 import { addCreateProjectLink, addSelectProjectLink } from './classes/projects';
 import { addCheckboxListner, addCreateAddItemLink } from './classes/to-dos';
+import utils from './classes/utils';
 
 
 const routes = () => {
-  const url = new URL(window.location.hash);
+  const url = utils.checkForHashInUrl();
+
   switch (true) {
     case /#new-project/.test(url.hash):
       document.querySelector('#content').innerHTML = newProject();
@@ -44,6 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
   routes();
   urlListner();
 });
+
+window.onload = () => {
+  routes();
+};
 
 //
 
