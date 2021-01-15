@@ -1,5 +1,10 @@
 
 const DB = {
+  initialize() {
+    if (window.localStorage.getItem('projects') == null) {
+      window.localStorage.setItem('projects', '[]');
+    }
+  },
   getProjects() {
     const projects = JSON.parse(window.localStorage.getItem('projects'));
     return projects;

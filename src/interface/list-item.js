@@ -6,7 +6,7 @@ const ListToDo = () => {
   const toDoList = [];
   for (let i = 0; i < items.length; i += 1) {
     const toDoHtml = `
-          <div class="text-gray-800 text-xl w-full p-5 shadow my-2 flex justify-between">
+          <div  class="text-gray-800 text-xl w-full p-5 shadow my-2 flex justify-between">
             <div>
             ${items[i].itemDescription}
             </div>
@@ -22,9 +22,10 @@ const ListToDo = () => {
   }
 
   const html = `
-      <h2 class="font-black text-2xl my-5">These are your toDo</h2>
-      <div class="">
-        ${toDoList.join(' ')}
+      
+      <div id="todo-list">
+      <h2 class="font-black text-2xl my-5  ">These are your toDo</h2>
+        ${toDoList.length > 0 ? toDoList.join(' ') : '<div class="text-gray-500">No todos yet.</div>'}
       </div>
     `;
 

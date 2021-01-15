@@ -4,7 +4,7 @@ import NewItem from './interface/new-item';
 import ListProjects from './interface/list-projects';
 import DB from './classes/localstorage';
 import { addCreateProjectLink, addSelectProjectLink } from './classes/projects';
-import { addCheckboxListner, addCreateAddItemLink } from './classes/to-dos';
+import Todo from './classes/to-dos';
 import utils from './classes/utils';
 
 
@@ -18,8 +18,8 @@ const routes = () => {
       break;
     case /.*?add-item(.*?)/g.test(url.hash):
       document.querySelector('#content').innerHTML = NewItem();
-      addCreateAddItemLink();
-      addCheckboxListner();
+      Todo.todoUtils.addCreateAddItemLinkListner();
+      Todo.todoUtils.addCheckboxListner();
       break;
     default:
       window.location.hash = '#index';
@@ -39,26 +39,11 @@ const addEventListener = (id, url) => {
   createProjectButton.addEventListener('click', () => { window.location.hash = url; });
 };
 
-
 document.addEventListener('DOMContentLoaded', () => {
   addEventListener('#createNewProjectButton', '#new-project');
   addEventListener('#logo', '#index');
   routes();
   urlListner();
 });
-<<<<<<< HEAD
 
-window.onload = () => {
-  routes();
-};
-
-//
-
-// document.querySelector('#content').innerHTML = ListProjects();
-
-// let project = JSON.parse(window.localStorage.getItem('projects'));
-
-
-// document.querySelector('#content').innerHTML = NewItem(project[0]);
-=======
->>>>>>> b4d3d91071108826349783f5e231ae1d6d09f30f
+DB.initialize();
