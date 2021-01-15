@@ -18,6 +18,7 @@ const createProject = () => {
   if (utils.validateForms(values)) {
     const p = Project(values);
     DB.saveProject(p);
+    window.location.hash = '#complete';
   }
 };
 
