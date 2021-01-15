@@ -3,7 +3,7 @@ import newProject from './interface/new-project';
 import NewItem from './interface/new-item';
 import ListProjects from './interface/list-projects';
 import DB from './classes/localstorage';
-import { addCreateProjectLink, addSelectProjectLink } from './classes/projects';
+import { addCreateProjectLink, addSelectProjectLink} from './classes/projects';
 import Todo from './classes/to-dos';
 import utils from './classes/utils';
 

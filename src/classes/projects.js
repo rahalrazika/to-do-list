@@ -12,7 +12,6 @@ const Project = ([title, description, dueDate, priority, todos = [], createdDate
   todos,
 });
 
-
 const createProject = () => {
   const values = utils.getFormValues();
   if (utils.validateForms(values)) {
@@ -34,7 +33,6 @@ const addCreateProjectLink = () => {
   const el = document.getElementById('button');
   el.addEventListener('click', () => createProject());
 };
-
 
 export {
   Project, createProject, addCreateProjectLink, addSelectProjectLink,
