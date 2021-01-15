@@ -45,5 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   routes();
   urlListner();
 });
+<<<<<<< HEAD
 
 DB.initialize();
+=======
+>>>>>>> 00abb820380b350b2952087416d38334581818e8
