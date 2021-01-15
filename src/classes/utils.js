@@ -19,7 +19,7 @@ const utils = {
     return values;
   },
   validateForms([...args]) {
-    for (let i = 0; i < args.length; i++) {
+    for (let i = 0; i < args.length; i += 1) {
       if (args[i] === '') {
         document.querySelector('body').innerHTML += customAlert('Please fill all fields.');
         return false;
@@ -27,6 +27,7 @@ const utils = {
     }
     return true;
   },
+<<<<<<< HEAD
   checkForHashInUrl() {
     let url;
     if (window.location.hash) {
@@ -37,6 +38,8 @@ const utils = {
 
     return url;
   },
+=======
+>>>>>>> b4d3d91071108826349783f5e231ae1d6d09f30f
 };
 
 export default utils;

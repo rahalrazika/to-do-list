@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Project, getFormValues } from '../classes/projects';
+import { Project } from '../classes/projects';
 
 const newProject = () => {
   const html = `

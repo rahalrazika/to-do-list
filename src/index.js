@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   routes();
   urlListner();
 });
+<<<<<<< HEAD
 
 window.onload = () => {
   routes();
@@ -59,3 +60,5 @@ window.onload = () => {
 
 
 // document.querySelector('#content').innerHTML = NewItem(project[0]);
+=======
+>>>>>>> b4d3d91071108826349783f5e231ae1d6d09f30f
