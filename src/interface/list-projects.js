@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import DB from '../classes/localstorage';
 
 const ListProjects = (projects) => {
   const projectsList = [];
@@ -27,12 +28,11 @@ const ListProjects = (projects) => {
   }
 
 
-
   const html = `
     <h2 class="font-black text-2xl my-5">These are your projects</h2>
     <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
       
-    ${projectsList.length > 0 ? projectsList.join(' ') : defaultProjct()}
+    ${projectsList.length > 0 ? projectsList.join(' ') : DB.defaultProjct()}
     </div>
   `;
 

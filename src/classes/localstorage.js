@@ -1,5 +1,3 @@
-import { Project, createProject } from './projects';
-
 const DB = {
   initialize() {
     const defaultProjct = [{
