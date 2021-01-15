@@ -27,7 +27,6 @@ const utils = {
     }
     return true;
   },
-<<<<<<< HEAD
   checkForHashInUrl() {
     let url;
     if (window.location.hash) {
@@ -38,8 +37,6 @@ const utils = {
 
     return url;
   },
-=======
->>>>>>> b4d3d91071108826349783f5e231ae1d6d09f30f
 };
 
 export default utils;
