@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.input-wrapper {
+  @apply mt-1 relative rounded-md shadow-sm border-red-800;
+}
+
+input[type="text"] {
+  @apply focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm rounded-md h-12;
+}
