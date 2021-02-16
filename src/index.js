@@ -7,7 +7,6 @@ import { addCreateProjectLink, addSelectProjectLink } from './classes/projects';
 import Todo from './classes/to-dos';
 import utils from './classes/utils';
 
-
 const routes = () => {
   const url = utils.checkForHashInUrl();
 
@@ -28,7 +27,6 @@ const routes = () => {
       break;
   }
 };
-
 
 const urlListner = () => {
   window.onhashchange = () => routes();

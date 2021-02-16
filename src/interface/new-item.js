@@ -23,5 +23,4 @@ const NewItem = () => {
   return html;
 };
 
-
 export default NewItem;
