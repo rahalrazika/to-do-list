@@ -3,7 +3,6 @@ import ListToDo from '../interface/list-item';
 import DB from './localstorage';
 import utils from './utils';
 
-
 const ToDoItem = (itemDescription, completed = false, date = format(new Date(), 'MM/dd/yyyy')) => ({ itemDescription, completed, date });
 
 const Todo = {
@@ -51,5 +50,4 @@ const Todo = {
   },
 };
 
-
-export default Todo;
+export { Todo, ToDoItem };
