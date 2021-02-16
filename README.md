@@ -30,6 +30,35 @@ $ cd <folder>
 $ git clone git@github.com:rahalrazika/to-do-list.git
 ```
 
+## Testing 
+Below shows the following commands you will need to run tests:
+1- Install Jest using yarn: 
+```
+yarn add --dev jest
+
+```
+- or npm :
+```
+npm install --save-dev jest
+
+```
+2- Or just run  
+```
+npm install
+
+```
+to initialize the project
+
+3- To run the tests, execute
+```
+npm run test 
+
+```
+or 
+```
+yarn test 
+
+```
 
 ## Authors
 👤 **Diego Lira**
