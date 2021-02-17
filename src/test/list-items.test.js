@@ -1,5 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import { ListToDo } from '../interface/list-item';
+/* eslint-disable no-unused-vars */
+import ListToDo from '../interface/list-item';
 
 describe('list to do ', () => {
   const project = {
