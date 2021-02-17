@@ -33,5 +33,6 @@ describe('list to do ', () => {
 
     const todoList = document.querySelectorAll('#todo-list');
     expect(todoList.length).toBe(1);
+    expect(todoList.length > 1).toBe(false);
   });
 });
