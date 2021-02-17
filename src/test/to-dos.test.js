@@ -31,4 +31,7 @@ describe(' new To do   ', () => {
 
     expect(project.todos).toContain(ToDoTest);
   });
+  it('Clicking to add new item ', () => {
+    expect(Todo).toBeDefined();
+  });
 });
