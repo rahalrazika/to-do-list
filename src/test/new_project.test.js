@@ -37,3 +37,8 @@ test('create a new project form', () => {
   const projectCard = document.querySelectorAll('.project-card');
   expect(projectCard.length).toBe(0);
 });
+test('test Create project button', () => {
+  document.body.innerHTML = '<div id="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full cursor-pointer">Create project</div>';
+  const createProject = document.getElementById('button');
+  expect(createProject.innerHTML).toBe('Create project');
+});

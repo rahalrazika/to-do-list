@@ -8,10 +8,10 @@ describe('list to do ', () => {
     dueDate: '02/28/2021',
     priority: 'High',
     createdDate: '02/16/2021',
-    todos: [
-      test,
-      true,
-    ],
+    todos: {
+      itemDescription: 'test',
+      completed: true,
+    },
   };
 
   const items = project.todos;
@@ -22,9 +22,17 @@ describe('list to do ', () => {
     expect(toDoList).toContain(items);
   });
 
+  test('to test the completed case equal to true  ', () => {
+    const checkboxInput = items.completed;
+    expect(checkboxInput).toEqual(true);
+  });
+  test('to test the completed case not equal to true  ', () => {
+    const checkboxInput = items.completed;
+    expect(checkboxInput).not.toEqual(false);
+  });
+
   test('to list of all todos', () => {
     document.body.innerHTML = `
-
     <div id="todo-list">
     <h2 class="font-black text-2xl my-5  ">These are your toDo</h2>
       ${toDoList.length > 0 ? toDoList.join(' ') : '<div class="text-gray-500">No todos yet.</div>'}

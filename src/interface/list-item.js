@@ -11,7 +11,7 @@ const ListToDo = () => {
             ${items[i].itemDescription}
             </div>
             <div>
-            ${items[i].completed ? '<input class="checkbox" type="checkbox" checked>' : `<input id=${i} class="checkbox" type="checkbox">`} 
+            ${items[i].completed ? '<input  class="checkbox" type="checkbox" checked>' : `<input id=${i} class="checkbox" type="checkbox">`} 
             </div>
             <div class="delete cursor-pointer">
               Delete

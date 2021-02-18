@@ -6,7 +6,7 @@ describe(' new project  ', () => {
     'Test project',
     '02/28/2021',
     'High',
-    '02/17/2021',
+    '02/18/2021',
 
   ]);
 
@@ -31,7 +31,7 @@ describe(' new project  ', () => {
   });
 
   it('expect a project createdDate ', () => {
-    expect(newProject.createdDate).toEqual('02/17/2021');
+    expect(newProject.createdDate).toEqual('02/18/2021');
   });
   it('expect a project createdDate to qual  the same date as creation date    ', () => {
     expect(newProject.createdDate).not.toEqual('02/29/2021');
