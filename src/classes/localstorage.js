@@ -17,7 +17,6 @@ const DB = {
     }
   },
 
-
   getProjects() {
     const projects = JSON.parse(window.localStorage.getItem('projects'));
     return projects;
@@ -38,6 +37,5 @@ const DB = {
     window.localStorage.setItem('projects', JSON.stringify(projects));
   },
 };
-
 
 export default DB;

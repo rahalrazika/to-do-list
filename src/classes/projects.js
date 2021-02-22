@@ -2,7 +2,6 @@ import { format } from 'date-fns';
 import DB from './localstorage';
 import utils from './utils';
 
-
 const Project = ([title, description, dueDate, priority, todos = [], createdDate = format(new Date(), 'MM/dd/yyyy')]) => ({
   title,
   description,

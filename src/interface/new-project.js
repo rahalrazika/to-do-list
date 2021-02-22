@@ -35,7 +35,6 @@ const newProject = () => {
     </form>
   `;
 
-
   return html;
 };
 
